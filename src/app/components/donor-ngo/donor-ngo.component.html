@@ -1,0 +1,77 @@
+<app-navbar-donor></app-navbar-donor>
+ <div class="list row">
+  <div class="col-md-8">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search by NGO"
+            [(ngModel)]="ngoid" 
+          />
+          <div class="input-group-append">
+            <button (click)="retrieveNgoDonors(ngoid)"
+              class="btn btn-outline-secondary"
+              type="button"
+              
+            >
+              Search
+            </button>
+          </div>
+        </div> 
+    </div>
+    <div>
+        <h3>Donor Details</h3>
+      
+        <div class="row">
+            <table class="table table-bordered table-primary table-striped w-auto ">
+                <thead>
+                    
+                <tr>  
+                  <th>ID</th>
+                 <th>Name</th> 
+                  <th>User Name</th>  
+                  <th>Password</th>  
+                  <th>Email</th>  
+                  <th>Address</th>  
+                  <th>Phone</th>  
+                                
+                  <th>Status</th> 
+                  <th>NGO</th> 
+                  <th></th>  
+                  <th></th>  
+                  <th></th>   
+                </tr> 
+           
+            </thead>
+            <tbody>
+          
+                   <tr *ngFor="let donor of donors; let i = index"
+                   [class.active]="i == currentIndex" >             
+                         <td>{{donor.id}}</td> 
+                       <td>{{donor.name}}</td>
+                                   
+                      <td>{{donor.username}}</td>  
+                      <td>{{donor.password }}</td>  
+                      <td>{{donor.email}}</td>  
+                      <td>{{donor.address}}</td> 
+                      <td>{{donor.phone}}</td> 
+                      <td>{{donor.status ? "Valid" : "Not Valid" }}</td> 
+                      <td>{{donor.ngoid}}</td> 
+                      <td >  
+                        <button type="button" class="btn btn-info"  [routerLink]="['/details/', donor.id]">Detail</button>  
+                      </td>  
+                      <td >  
+                        <button type="button" class="btn btn-success"  [routerLink]="['/update/', donor.id]">Edit</button>  
+                      </td>  
+                      <td >  
+                        <button type="button" class="btn btn-danger" (click)="deleteDonor(donor.id)">Delete</button>  
+                      </td> 
+                    </tr> 
+                   </tbody>
+                  </table>  
+    
+                  
+               
+                  </div>
+        </div>
+    </div>

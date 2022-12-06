@@ -1,0 +1,134 @@
+<app-navbar-donor></app-navbar-donor>
+ <div class="list row">
+    <!-- <div class="col-md-8">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search by Id"
+            [(ngModel)]="donorid" 
+          />
+          <div class="input-group-append">
+            <button (click)="searchDonorID()"
+              class="btn btn-outline-secondary"
+              type="button"
+              
+            >
+              Search
+            </button>
+          </div>
+        </div> 
+    </div>
+ <div class="col-md-6">
+      <h4>Donor List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let donor of donors; let i = index"
+          [class.active]="i == currentIndex">
+          
+          {{ donor.name }}    {{ donor.username }}    {{donor.email}}
+        </li>
+      </ul>
+  
+      <button class="m-3 btn btn-sm btn-danger" >
+        Remove 
+      </button>
+    </div>
+  
+    <div class="col-md-6">
+      <div *ngIf="currentDonor">
+        <h4>Donor</h4>
+        <div>
+          <label><strong>Name:</strong></label> {{ currentDonor.name }}
+        </div>
+        <div>
+          <label><strong>UserName:</strong></label>
+          {{ currentDonor.username}}
+        </div>
+        <div>
+          <label><strong>Email:</strong></label>
+          {{ currentDonor.email  }}
+        </div>
+  
+       
+      </div>
+      <div *ngIf="!currentDonor">
+        <br />
+        <p>Please click on ...</p>
+      </div> -->
+      <div>
+        <h3>Donor Details</h3>
+      
+        <div class="row">
+            <table class="table table-bordered table-primary table-striped w-auto ">
+                <thead>
+                    
+                <tr>  
+                  <th>ID</th>
+                 <th>Name</th> 
+                  <th>User Name</th>  
+                  <th>Password</th>  
+                  <th>Email</th>  
+                  <th>Address</th>  
+                  <th>Phone</th>  
+                                
+                  <th>Status</th> 
+                  <th>NGO</th> 
+                  <th></th>  
+                  <th></th>  
+                  <th></th>   
+                </tr> 
+           
+            </thead>
+            <tbody>
+          
+                   <tr *ngFor="let donor of donors; let i = index"
+                   [class.active]="i == currentIndex" (click)="setActiveDonor(donor, i)">             
+                         <td>{{donor.id}}</td> 
+                       <td>{{donor.name}}</td>
+                                   
+                      <td>{{donor.username}}</td>  
+                      <td>{{donor.password }}</td>  
+                      <td>{{donor.email}}</td>  
+                      <td>{{donor.address}}</td> 
+                      <td>{{donor.phone}}</td> 
+                      <td>{{donor.status ? "Valid" : "Not Valid" }}</td> 
+                      <td>{{donor.ngoid}}</td> 
+                      <td >  
+                        <button type="button" class="btn btn-info"  [routerLink]="['/details/', donor.id]">Detail</button>  
+                      </td>  
+                      <td >  
+                        <button type="button" class="btn btn-success"  [routerLink]="['/update/', donor.id]">Edit</button>  
+                      </td>  
+                      <td >  
+                        <button type="button" class="btn btn-danger" (click)="deleteDonor(donor.id)">Delete</button>  
+                      </td> 
+                    </tr> 
+                   </tbody>
+                  </table>  
+    
+                  <div *ngIf="currentDonor">
+                    <h4>Donor</h4>
+                    <div>
+                      <label><strong>ID:</strong></label> {{ currentDonor.id }}
+                    </div>
+                    <div>
+                      <label><strong>Name:</strong></label>
+                      {{ currentDonor.name }}
+                    </div>
+                    <div>
+                      <label><strong>Staus:</strong></label>
+                      {{ currentDonor.status ? "Valid" : "Not Valid" }}
+                    </div>
+              
+               
+                  </div>
+              
+                  <div *ngIf="!currentDonor">
+                    <br />
+                    <p>Please click on a Donor...</p>
+                  </div>
+    </div>
+  </div>
+ 

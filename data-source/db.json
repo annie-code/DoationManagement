@@ -1,0 +1,37 @@
+{
+  "donors": [
+    {
+      "id": 1,
+      "name": "Ria",
+      "username": "Ria123",
+      "password": "password@123",
+      "email": "ris@gmail.com",
+      "address": "iiht",
+      "phone": "9876543210",
+      "isdeleted": true,
+      "ngoid": 100
+    },
+    {
+      "id": 2,
+      "name": "Rohan babu",
+      "username": "Ro923",
+      "password": "password@123",
+      "email": "abc@gmail.com",
+      "address": "iiht",
+      "phone": "9876543210",
+      "isdeleted": true,
+      "ngoid": 100
+    },
+    {
+      "id": 3,
+      "name": "Annie A J",
+      "username": "Raj",
+      "password": "password@123",
+      "email": "annbaku@yahoo.com",
+      "address": "19/12,Saravanalayam,sivaswami salai,Mylapore,Chennai",
+      "phone": "09841083655",
+      "isdeleted": true,
+      "ngoid": 345
+    }
+  ]
+}
