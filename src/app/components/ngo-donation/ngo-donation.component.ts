@@ -1,30 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { NgodonationService } from 'src/app/services/ngodonation.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
 @Component({
-  selector: 'app-donation-details',
-  templateUrl: './donation-details.component.html',
-  styleUrls: ['./donation-details.component.css']
+  selector: 'app-ngo-donation',
+  templateUrl: './ngo-donation.component.html',
+  styleUrls: ['./ngo-donation.component.css']
 })
-export class DonationDetailsComponent implements OnInit {
-  currentdonations: any;
+export class NgoDonationComponent implements OnInit {
+  donations: any;
+  currentDonation = null;
+  currentIndex = -1;
+  ngoid = 0;
   constructor(private donationService: NgodonationService,private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit(): void {
-    this.searchDonationID(this.route.snapshot.paramMap.get('id'));
   }
-  searchDonationID(id) {
-    this.donationService. get(id)
+  retrieveNgoDonations(did) {
+    console.log(did);
+   
+    this.donationService.findByNgo(did)
       .subscribe(
         data => {
-          this.currentdonations = data;
+         
+          this.donations = data;
           console.log(data);
         },
         error => {
           console.log(error);
         });
   }
-
 }

@@ -1,1 +1,19 @@
-<p>ngo-details works!</p>
+<app-navbar-ngo></app-navbar-ngo>
+<div class="list row">
+    <div  *ngIf="currentngos">
+        <h2>{{currentngos.name}} details!</h2>
+        <div><label>id: </label>{{currentngos.id}}</div>
+        <div>
+          <label>Username: </label>
+        {{currentngos.username}}
+
+   </div>
+        <div><label>Password: </label>{{currentngos.password}}</div>
+        <div><label>Email: </label>{{currentngos.startdate}}</div>
+        <div><label>Phone: </label>{{currentngos.phone}}</div>
+        <div><label>Address: </label>{{currentngos.address}}</div>
+        <div><label>Status: </label>{{currentngos.isdeleted ? "Valid":"Not Valid"}}</div>
+        <div><label>NGO: </label>{{currentngos.filepath}}</div>
+      </div>
+ </div>
+

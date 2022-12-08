@@ -1,0 +1,74 @@
+<app-navbar-donation></app-navbar-donation>
+<div style="width: 500px; margin: auto;">
+    <div *ngIf="currentdonations" class="edit-form">
+       <h4>Donor</h4>
+       <form>
+        <div class="form-group">
+            <label for="type">Type</label>
+            <input
+              class="form-control"
+              id="type"
+              required
+              [(ngModel)]="currentdonations.type"
+              name="type"
+            />
+          </div>
+          <div class="form-group">
+            <label for="amount">AMOUNT</label>
+            <input
+              class="form-control"
+              id="amount"
+              required
+              [(ngModel)]="currentdonations.amount"
+              name="amount"
+            />
+          </div>
+          <div class="form-group">
+            <label for="date">Payment Date</label>
+            <input 
+              class="form-control"
+              id="date"
+              required
+              [(ngModel)]="currentdonations.date"
+              name="date"
+            />
+          </div>
+          <div class="form-group">
+            <label for="ngoid">NGO ID</label>
+            <input 
+              class="form-control"
+              id="ngoid"
+              required
+              [(ngModel)]="currentdonations.ngoid"
+              name="ngoid"
+            />
+          </div>
+          <div class="form-group">
+            <label for="donorid">Donor ID</label>
+            <input
+              class="form-control"
+              id="donorid"
+              required
+              [(ngModel)]="currentdonations.donorid"
+              name="donorid"
+            />
+          </div>
+          
+          
+      </form>
+      <button
+            type="submit"
+            class="btn btn-info"
+            (click)="updateDonations()"
+          >
+            Update
+          </button>
+          <p></p>
+        </div>
+      
+        <div *ngIf="!currentdonations">
+          <br />
+          <p>This Donation is not accessible</p>
+        </div>
+      </div>
+

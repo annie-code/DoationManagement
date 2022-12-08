@@ -1,0 +1,80 @@
+<app-navbar-ngo></app-navbar-ngo>
+<div class="list row">
+    <div>
+        <h3>NGO Details</h3>
+      
+        <div class="row">
+            <table class="table table-bordered table-primary table-striped w-auto ">
+                <thead>
+                    
+                <tr>  
+                  <th>ID</th>
+                 <th>Name</th> 
+                  <th>User Name</th>  
+                  <th>Password</th>  
+                   
+                  <th>Address</th>  
+                  <th>Phone</th>  
+                  <th>Start Date</th>  
+                  <th>File Path</th>         
+                  <th>Delete Status</th> 
+                 
+                  <th></th>  
+                  <th></th>  
+                  <th></th>   
+                </tr> 
+           
+            </thead>
+            <tbody>
+          
+                   <tr *ngFor="let ngo of ngos; let i = index"
+                   [class.active]="i == currentIndex" (click)="setActiveNgo(ngo, i)">             
+                         <td>{{ngo.id}}</td> 
+                       <td>{{ngo.name}}</td>
+                                   
+                      <td>{{ngo.username}}</td>  
+                      <td>{{ngo.password }}</td>  
+                      <td>{{ngo.address}}</td> 
+                                       
+                      <td>{{ngo.phone}}</td>
+                      <td>{{ngo.startdate}}</td>  
+                      <td>{{ngo.filepath}}</td> 
+                      <td>{{ngo.isdeleted ? "Valid" : "Deleted" }}</td> 
+                    
+                      <td >  
+                        <button type="button" class="btn btn-info"  [routerLink]="['/ngodetails/', ngo.id]">Detail</button>  
+                      </td>  
+                      <td >  
+                        <button type="button" class="btn btn-success"  [routerLink]="['/ngoupdate/', ngo.id]">Edit</button>  
+                      </td>  
+                      <td >  
+                        <button type="button" class="btn btn-danger" (click)="deleteNgo(ngo.id)">Delete</button>  
+                      </td> 
+                    </tr> 
+                   </tbody>
+                  </table>  
+    
+                  <div *ngIf="currentNgo">
+                    <h4>NGO</h4>
+                    <div>
+                      <label><strong>ID:</strong></label> {{ currentNgo.id }}
+                    </div>
+                    <div>
+                      <label><strong>Name:</strong></label>
+                      {{ currentNgo.name }}
+                    </div>
+                    <div>
+                      <label><strong>Staus:</strong></label>
+                      {{ currentNgo.isdeleted ? "Valid" : "Not Valid" }}
+                    </div>
+              
+               
+                  </div>
+              
+                  <div *ngIf="!currentNgo">
+                    <br />
+                    <p>Please click on a NGO...</p>
+                  </div>
+    </div>
+  </div>
+ 

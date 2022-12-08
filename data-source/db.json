@@ -28,10 +28,74 @@
       "username": "Raj",
       "password": "password@123",
       "email": "annbaku@yahoo.com",
-      "address": "19/12,Saravanalayam,sivaswami salai,Mylapore,Chennai",
+      "address": "19/12",
       "phone": "09841083655",
       "isdeleted": true,
       "ngoid": 345
+    }
+  ],
+  "ngos": [
+    {
+      "id": 1,
+      "name": "Greatone",
+      "username": "g1234",
+      "password": "wer345",
+      "address": "fghh",
+      "phone": "9876543210",
+      "startdate": "2022-12-07",
+      "filepath": "C:\\fakepath\\demo.txt",
+      "isdeleted": true
+    }
+  ],
+  "donations": [
+    {
+      "id": 1,
+      "type": "private",
+      "amount": 10000,
+      "date": "12/01/2022",
+      "isdeleted": true,
+      "ngoid": 345,
+      "donorid": 1
+    },
+    {
+      "id": 2,
+      "type": "Public",
+      "amount": "56000",
+      "date": "2022-12-07",
+      "isdeleted": true,
+      "ngoid": 100,
+      "donorid": 1
+    },
+    {
+      "id": 3,
+      "type": "Corporate",
+      "amount": 23000,
+      "date": "2022-12-16",
+      "isdeleted": true,
+      "ngoid": 100,
+      "donorid": 2
+    }
+  ],
+  "requests": [
+    {
+      "id": 1,
+      "amount": 10000,
+      "status": "accept",
+      "enddate": "2022-12-07",
+      "isdeleted": true,
+      "ngoid": 100,
+      "donorid": 2,
+      "donationid": 2
+    },
+    {
+      "id": 2,
+      "amount": 10000,
+      "status": "accept",
+      "enddate": "2022-12-08",
+      "isdeleted": true,
+      "ngoid": 100,
+      "donorid": 1,
+      "donationid": 1
     }
   ]
 }

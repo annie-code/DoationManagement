@@ -1,0 +1,82 @@
+<app-navbar-ngo></app-navbar-ngo>
+<div class="submit-form">
+    <div *ngIf="!submitted">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              class="form-control"
+              id="name"
+              required
+              [(ngModel)]="ngo.name"
+              name="name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="username">username</label>
+            <input
+              class="form-control"
+              id="username"
+              required
+              [(ngModel)]="ngo.username"
+              name="username"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">password</label>
+            <input type="password"
+              class="form-control"
+              id="password"
+              required
+              [(ngModel)]="ngo.password"
+              name="password"
+            />
+          </div>
+          <div class="form-group">
+            <label for="startdate">email</label>
+            <input
+            type="date"
+              class="form-control"
+              id="startdate"
+              required
+              [(ngModel)]="ngo.startdate"
+              name="startdate"
+            />
+          </div>
+          <div class="form-group">
+            <label for="address">address</label>
+            <input
+              class="form-control"
+              id="address"
+              required
+              [(ngModel)]="ngo.address"
+              name="address"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">phone</label>
+            <input
+              class="form-control"
+              id="phone"
+              required
+              [(ngModel)]="ngo.phone"
+              name="phone"
+            />
+          </div>
+          <div class="form-group">
+            <label for="filepath">File Path</label>
+            <input type="file"
+              class="form-control"
+              id="filepath"
+              required
+              [(ngModel)]="ngo.filepath"
+              name="filepath"
+            />
+          </div>
+          <button (click)="saveNgo()" class="btn btn-success">SAVE</button>
+        </div>
+      
+        <div *ngIf="submitted">
+          <h4>You submitted successfully!</h4>
+          <button class="btn btn-success" (click)="newNgo()">Add</button>
+        </div>
+      </div>

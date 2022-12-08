@@ -1,1 +1,19 @@
-<p>donation-details works!</p>
+<app-navbar-donation></app-navbar-donation>
+<div class="list row">
+    <div  *ngIf="currentdonations">
+        <h2>{{currentdonations.name}} details!</h2>
+        <div><label>id: </label>{{currentdonations.id}}</div>
+        <div>
+          <label>Type: </label>
+        {{currentdonations.type}}
+
+    </div>
+        <div><label>AMOUNT: </label>{{currentdonations.amount}}</div>
+        <div><label>Pay Date: </label>{{currentdonations.date}}</div>
+        <div><label>NGO ID: </label>{{currentdonations.ngoid}}</div>
+        <div><label>Donor ID: </label>{{currentdonations.donorid}}</div>
+        <div><label>Status: </label>{{currentdonations.isdeleted ? "Valid":"Not Valid"}}</div>
+     
+      </div>
+ </div>
+

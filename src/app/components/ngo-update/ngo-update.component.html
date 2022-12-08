@@ -1,0 +1,93 @@
+<app-navbar-ngo></app-navbar-ngo>
+<div style="width: 500px; margin: auto;">
+    <div *ngIf="currentngos" class="edit-form">
+       <h4>Donor</h4>
+       <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              class="form-control"
+              id="name"
+              required
+              [(ngModel)]="currentngos.name"
+              name="name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="username">username</label>
+            <input
+              class="form-control"
+              id="username"
+              required
+              [(ngModel)]="currentngos.username"
+              name="username"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">password</label>
+            <input type="password"
+              class="form-control"
+              id="password"
+              required
+              [(ngModel)]="currentngos.password"
+              name="password"
+            />
+          </div>
+          <div class="form-group">
+            <label for="startdate">email</label>
+            <input type="date"
+              class="form-control"
+              id="startdate"
+              required
+              [(ngModel)]="currentngos.startdate"
+              name="startdate"
+            />
+          </div>
+          <div class="form-group">
+            <label for="address">address</label>
+            <input
+              class="form-control"
+              id="address"
+              required
+              [(ngModel)]="currentngos.address"
+              name="address"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">phone</label>
+            <input
+              class="form-control"
+              id="phone"
+              required
+              [(ngModel)]="currentngos.phone"
+              name="phone"
+            />
+          </div>
+          <div class="form-group">
+            <label for="filepath">FilePath</label>
+            <div><label for="file">{{currentngos.filepath}}</label></div>
+            <input type="file"
+              class="form-control"
+              id="filepath"
+              required
+              [(ngModel)]="currentngos.filepath"
+              name="filepath"
+            />
+           
+          </div>
+      </form>
+      <button
+            type="submit"
+            class="btn btn-info"
+            (click)="updateDonor()"
+          >
+            Update
+          </button>
+          <p></p>
+        </div>
+      
+        <div *ngIf="!currentngos">
+          <br />
+          <p>This Donor is not accessible</p>
+        </div>
+      </div>

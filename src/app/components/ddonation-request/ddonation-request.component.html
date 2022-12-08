@@ -1,0 +1,84 @@
+<app-navbar-request></app-navbar-request>
+
+<div class="submit-form">
+    <div *ngIf="!submitted">
+        
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number"
+              class="form-control"
+              id="amount"
+              required
+              [(ngModel)]="request.amount"
+              name="amount"
+            />
+          </div>
+          <div class="form-group">
+            <label for="status">Request status</label>
+            <input 
+              class="form-control"
+              id="status"
+              required
+              [(ngModel)]="request.status"
+              name="status"
+            />
+          </div>
+          <div class="form-group">
+            <label for="enddate">Payment Date</label>
+            <input type="date"
+              class="form-control"
+              id="enddate"
+              required
+              [(ngModel)]="request.enddate"
+              name="enddate"
+            />
+          </div>
+          <div class="form-group">
+            <label for="isdeleted">Valid</label>
+            <input type="checkbox"
+              class="form-control"
+              id="isdeleted"
+              required
+              [(ngModel)]="request.isdeleted"
+              name="isdeleted"
+            />
+          </div>
+          <div class="form-group">
+            <label for="ngoid">NGO ID</label>
+            <input
+            type="number"
+              class="form-control"
+              id="ngoid"
+              required
+              [(ngModel)]="request.ngoid"
+              name="ngoid"
+            />
+          </div>
+          <div class="form-group">
+            <label for="donorid">DONOR ID</label>
+            <input type="number"
+              class="form-control"
+              id="donorid"
+              required
+              [(ngModel)]="request.donorid"
+              name="donorid"
+            />
+          </div>
+          <div class="form-group">
+            <label for="donationid">DONATION ID</label>
+            <input type="number"
+              class="form-control"
+              id="donationid"
+              required
+              [(ngModel)]="request.donationid"
+              name="donationid"
+            />
+          </div>
+          <button (click)="saveRequest()" class="btn btn-success">SAVE</button>
+        </div>
+      
+        <div *ngIf="submitted">
+          <h4>You submitted successfully!</h4>
+          <button class="btn btn-success" (click)="newRequest()">Donate</button>
+        </div>
+      </div>

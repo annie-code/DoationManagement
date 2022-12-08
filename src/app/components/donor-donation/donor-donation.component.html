@@ -1,0 +1,73 @@
+<app-navbar-donation></app-navbar-donation>
+<div class="list row">
+    <div class="col-md-8">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search by Donor"
+              [(ngModel)]="donorid" 
+            />
+            <div class="input-group-append">
+              <button (click)="retrieveDonorDonations(donorid)"
+                class="btn btn-outline-secondary"
+                type="button"
+                
+              >
+                Search
+              </button>
+            </div>
+          </div> 
+      </div>
+      <div>
+          <h3>Donor Donation Details</h3>
+        
+          <div class="row">
+              <table class="table table-bordered table-primary table-striped w-auto ">
+                  <thead>
+                      
+                  <tr>  
+                    <th>ID</th>
+                 <th>TYPE</th> 
+                  <th>AMOUNT</th>  
+                   
+                  <th>Payment Date</th>  
+                          
+                  <th>Delete Status</th> 
+                  <th>NGO ID</th>
+                  <th>DONOR ID</th>
+                  <th></th>  
+                  <th></th>  
+                  <th></th>   
+                  </tr> 
+             
+              </thead>
+              <tbody>
+            
+                <tr *ngFor="let donation of donations; let i = index"
+                [class.active]="i == currentIndex" (click)="setActiveDonation(donation, i)">             
+                      <td>{{donation.id}}</td> 
+                    <td>{{donation.type}}</td>
+                                
+                   <td>{{donation.amount}}</td>  
+                   <td>{{donation.date}}</td>  
+                   <td>{{donation.isdeleted ? "Valid" : "Deleted" }}</td> 
+                 
+                   <td>{{donation.ngoid}}</td> 
+                                    
+                   <td>{{donation.donorid}}</td>
+                
+                 
+                   <td >  
+                     <button type="button" class="btn btn-info"  [routerLink]="['/donationdetails/', donation.id]">Detail</button>  
+                   </td>  
+                   <td >  
+                     <button type="button" class="btn btn-success"  [routerLink]="['/donationupdate/', donation.id]">Edit</button>  
+                   </td>  
+                   <td >  
+                     <button type="button" class="btn btn-danger" (click)="deleteDonation(donation.id)">Delete</button>  
+                   </td> 
+                 </tr> 
+                     </tbody>
+                    </table>  
+      

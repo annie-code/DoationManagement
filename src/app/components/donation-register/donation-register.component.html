@@ -1,0 +1,63 @@
+<app-navbar-donation></app-navbar-donation>
+<div class="submit-form">
+    <div *ngIf="!submitted">
+        <div class="form-group">
+            <label for="type">TYPE</label>
+            <input 
+              class="form-control"
+              id="type"
+              required
+              [(ngModel)]="donation.type"
+              name="type"
+            />
+          </div>
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number"
+              class="form-control"
+              id="amount"
+              required
+              [(ngModel)]="donation.amount"
+              name="amount"
+            />
+          </div>
+          <div class="form-group">
+            <label for="pdate">Payment Date</label>
+            <input type="date"
+              class="form-control"
+              id="pdate"
+              required
+              [(ngModel)]="donation.pdate"
+              name="pdate"
+            />
+          </div>
+          <div class="form-group">
+            <label for="ngoid">NGO ID</label>
+            <input
+            type="number"
+              class="form-control"
+              id="ngoid"
+              required
+              [(ngModel)]="donation.ngoid"
+              name="ngoid"
+            />
+          </div>
+          <div class="form-group">
+            <label for="donorid">DONOR ID</label>
+            <input type="number"
+              class="form-control"
+              id="donorid"
+              required
+              [(ngModel)]="donation.donorid"
+              name="donorid"
+            />
+          </div>
+          
+          <button (click)="saveDonation()" class="btn btn-success">SAVE</button>
+        </div>
+      
+        <div *ngIf="submitted">
+          <h4>You submitted successfully!</h4>
+          <button class="btn btn-success" (click)="newDonation()">Donate</button>
+        </div>
+      </div>

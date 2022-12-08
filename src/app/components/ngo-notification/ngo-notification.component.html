@@ -1,0 +1,65 @@
+<app-navbar-request></app-navbar-request>
+<div class="list row">
+    <div class="col-md-8">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search by NGO"
+              [(ngModel)]="ngoid" 
+            />
+            <div class="input-group-append">
+              <button (click)=" retrieveNgoRequests(ngoid)"
+                class="btn btn-outline-secondary"
+                type="button"
+                
+              >
+                Search
+              </button>
+            </div>
+          </div> 
+      </div>
+      <div>
+          <h3>NGO Request Details</h3>
+        
+          <div class="row">
+              <table class="table table-bordered table-primary table-striped w-auto ">
+                  <thead>
+                      
+                  <tr>  
+                    <th>ID</th>
+                
+                  <th>AMOUNT</th>  
+                  <th>STATUS</th> 
+                  <th>END Date</th>  
+                          
+                  <th>Delete Status</th> 
+                  <th>NGO ID</th>
+                  <th>DONOR ID</th>
+                  <th>DONATION ID</th>
+                   
+                  </tr> 
+             
+              </thead>
+              <tbody>
+            
+                <tr *ngFor="let request of requests; let i = index">             
+                      <td>{{request.id}}</td> 
+                      <td>{{request.amount}}</td>  
+                    <td>{{request.status}}</td>
+                                
+                  
+                   <td>{{request.enddate}}</td>  
+                   <td>{{request.isdeleted ? "Valid" : "Deleted" }}</td> 
+                 
+                   <td>{{request.ngoid}}</td> 
+                                    
+                   <td>{{request.donorid}}</td>
+                   <td>{{request.donationid}}</td>
+                 
+                   
+                 </tr> 
+                     </tbody>
+                    </table>  
+                    
+      

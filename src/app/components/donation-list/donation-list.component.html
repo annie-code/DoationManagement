@@ -1,0 +1,78 @@
+<app-navbar-donation></app-navbar-donation>
+<div class="list row">
+    <div>
+        <h3>NGO Details</h3>
+      
+        <div class="row">
+            <table class="table table-bordered table-primary table-striped w-auto ">
+                <thead>
+                    
+                <tr>  
+                  <th>ID</th>
+                 <th>TYPE</th> 
+                  <th>AMOUNT</th>  
+                   
+                  <th>Payment Date</th>  
+                          
+                  <th>Delete Status</th> 
+                  <th>NGO ID</th>
+                  <th>DONOR ID</th>
+                  <th></th>  
+                  <th></th>  
+                  <th></th>   
+                </tr> 
+           
+            </thead>
+            <tbody>
+          
+                   <tr *ngFor="let donation of donations; let i = index"
+                   [class.active]="i == currentIndex" (click)="setActiveDonation(donation, i)">             
+                         <td>{{donation.id}}</td> 
+                       <td>{{donation.type}}</td>
+                                   
+                      <td>{{donation.amount}}</td>  
+                      <td>{{donation.date}}</td>  
+                      <td>{{donation.isdeleted ? "Valid" : "Deleted" }}</td> 
+                    
+                      <td>{{donation.ngoid}}</td> 
+                                       
+                      <td>{{donation.donorid}}</td>
+                   
+                    
+                      <td >  
+                        <button type="button" class="btn btn-info"  [routerLink]="['/donationdetails/', donation.id]">Detail</button>  
+                      </td>  
+                      <td >  
+                        <button type="button" class="btn btn-success"  [routerLink]="['/donationupdate/', donation.id]">Edit</button>  
+                      </td>  
+                      <td >  
+                        <button type="button" class="btn btn-danger" (click)="deleteDonation(donation.id)">Delete</button>  
+                      </td> 
+                    </tr> 
+                   </tbody>
+                  </table>  
+    
+                  <div *ngIf="currentDonation">
+                    <h4>Donations</h4>
+                    <div>
+                      <label><strong>ID:</strong></label> {{ currentDonation.id }}
+                    </div>
+                    <div>
+                      <label><strong>Type:</strong></label>
+                      {{ currentDonation.type }}
+                    </div>
+                    <div>
+                      <label><strong>Staus:</strong></label>
+                      {{ currentDonation.isdeleted ? "Valid" : "Not Valid" }}
+                    </div>
+              
+               
+                  </div>
+              
+                  <div *ngIf="!currentDonation">
+                    <br />
+                    <p>Please click on a Donation...</p>
+                  </div>
+    </div>
+  </div>
+ 

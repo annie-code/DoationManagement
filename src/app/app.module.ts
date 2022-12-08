@@ -14,6 +14,21 @@ import { NgoDetailsComponent } from './components/ngo-details/ngo-details.compon
 import { DonationDetailsComponent } from './components/donation-details/donation-details.component';
 import { DonorUpdateComponent } from './components/donor-update/donor-update.component';
 import { DonorNgoComponent } from './components/donor-ngo/donor-ngo.component';
+import { NgoListComponent } from './components/ngo-list/ngo-list.component';
+import { NgoUpdateComponent } from './components/ngo-update/ngo-update.component';
+import { NgoRegisterComponent } from './components/ngo-register/ngo-register.component';
+import { NavbarNgoComponent } from './components/navbar-ngo/navbar-ngo.component';
+import { NavbarDonationComponent } from './components/navbar-donation/navbar-donation.component';
+import { DonationRegisterComponent } from './components/donation-register/donation-register.component';
+import { DonationListComponent } from './components/donation-list/donation-list.component';
+import { DonationUpdateComponent } from './components/donation-update/donation-update.component';
+import { DonorDonationComponent } from './components/donor-donation/donor-donation.component';
+import { NgoDonationComponent } from './components/ngo-donation/ngo-donation.component';
+import { DdonationRequestComponent } from './components/ddonation-request/ddonation-request.component';
+import { NavbarRequestComponent } from './components/navbar-request/navbar-request.component';
+import { DonorRequestComponent } from './components/donor-request/donor-request.component';
+import { NgoNotificationComponent } from './components/ngo-notification/ngo-notification.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +41,22 @@ import { DonorNgoComponent } from './components/donor-ngo/donor-ngo.component';
     NgoDetailsComponent,
     DonationDetailsComponent,
     DonorUpdateComponent,
-    DonorNgoComponent
+    DonorNgoComponent,
+    NgoListComponent,
+    NgoUpdateComponent,
+    NgoRegisterComponent,
+    NavbarNgoComponent,
+    NavbarDonationComponent,
+    DonationRegisterComponent,
+    DonationListComponent,
+    DonationUpdateComponent,
+    DonorDonationComponent,
+    NgoDonationComponent,
+    DdonationRequestComponent,
+    
+    NavbarRequestComponent,
+         DonorRequestComponent,
+         NgoNotificationComponent
   ],
   imports: [
     BrowserModule,
